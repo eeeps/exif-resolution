@@ -15,7 +15,7 @@ Requires [exiftool](https://exiftool.org).
 No matter *what* `img.jpg`’s actual pixel dimensions are, this will set its [Exif][] metadata [in such a way][] that browsers (well, [some browsers](https://wpt.fyi/results/density-size-correction?label=experimental&label=master&aligned)) will give it an [intrinsic size][] of 400-`px`-wide and 300-`px`-tall.
 
 
-### Target resolution
+### Target density
 
 ```
 % node exif-resolution img.jpg 2x
