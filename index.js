@@ -32,7 +32,7 @@ if ( !resolution ) {
 const regexedResolution = resolution.match( /^([\d.]+)x(\d+)?$/ );
 
 if ( !regexedResolution ) {
-	throw "Resolution must either be in the format [WIDTH]x[HEIGHT] or [DPR]x";
+	throw "Resolution must either be in the format [WIDTH]x[HEIGHT] or [DENSITY]x";
 }
 
 // derive the desired EXIF-modified dimensions from input arguments
@@ -42,7 +42,7 @@ if ( regexedResolution[ 2 ] ) { // we got [WIDTH]x[HEIGHT]
 	modified.w = parseInt( regexedResolution[ 1 ] );
 	modified.h = parseInt( regexedResolution[ 2 ] );
 
-} else { // we got [DPR]x
+} else { // we got [DENSITY]x
 
 	const dpr = parseFloat( regexedResolution[ 1 ] );
 	modified.w = Math.round( original.w / dpr );
